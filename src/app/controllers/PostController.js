@@ -7,6 +7,7 @@ const Post = require('../models/Post');
 class PostController {
   index(req, res, next) {
     Post.find({})
+      .sort({ createdAt: -1 })
       .then((posts) => {
         res.render('post', { posts: multiMongooseToObject(posts) });
       })

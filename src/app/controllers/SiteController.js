@@ -3,6 +3,7 @@ const { multiMongooseToObject } = require('../../utils/common');
 class SiteController {
   async index(req, res, next) {
     Course.find({})
+      .sort({ createdAt: -1 })
       .then((courses) =>
         res.render('home', {
           courses: multiMongooseToObject(courses),

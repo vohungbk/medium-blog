@@ -36,5 +36,5 @@ app.set('views', path.join(__dirname, 'resources', 'views'));
 routes(app);
 
 app.listen(port, () => {
-  console.log(`App listening on port http://${port}`);
+  console.log(`App listening on port http://localhost:${port}`);
 });
